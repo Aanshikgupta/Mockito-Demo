@@ -7,6 +7,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -32,6 +34,18 @@ public class MockTest {
         int x=dataUsage.greatestOfAll();
 
         assertEquals(x,4);
+
+    }
+
+    @Test
+    void listTest(){
+        List listMock=mock(List.class);
+
+        when(listMock.size()).thenReturn(1).thenReturn(3);
+
+        assertEquals(1,listMock.size());//works fine as first time it return 1
+        assertEquals(3,listMock.size());//second call it returns 3
+        assertEquals(3,listMock.size());//subsequent call it returns last return value ie 3
     }
 
 
