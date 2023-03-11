@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MockitoStubTest {
+public class StubTest {
 
     DataService dataService;
     @Test
@@ -29,18 +29,18 @@ public class MockitoStubTest {
 }
 
 
+//Stub1
 class DataServiceImpl implements DataService
 {
-
     @Override
     public int[] retrieveAllData() {
         return new int[]{1,2,3,4};
     }
 }
 
+//Stub2
 class DataServiceImpl1 implements DataService
 {
-
     @Override
     public int[] retrieveAllData() {
         return new int[]{};
